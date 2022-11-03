@@ -12,7 +12,7 @@ class ControladorPermisoRol():
     def index(self):
         return self.repositorioPermisoRol.findAll()
     """
-    Asignacion estudiante y materia a inscripción
+    Asignacion Rol y permiso a PermisoRol
     """
     def create(self,infoPermisoRol,id_rol,id_permiso):
         nuevoPermisoRol=PermisoRol(infoPermisoRol)
@@ -25,7 +25,7 @@ class ControladorPermisoRol():
         elPermisoRol=PermisoRol(self.repositorioPermisoRol.findById(id))
         return elPermisoRol.__dict__
     """
-    Modificación de inscripción (estudiante y materia)
+    Modificación de PermisoRol (Permiso y Rol)
     """
     def update(self,id,id_rol,id_permiso):
         elPermisoRol=PermisoRol(self.repositorioPermisoRol.findById(id))
@@ -36,6 +36,3 @@ class ControladorPermisoRol():
         return self.repositorioPermisoRol.save(elPermisoRol)
     def delete(self, id):
         return self.repositorioPermisoRol.delete(id)
-    "Obtener todos los inscritos en una materia"
-    def listarPermisoRol(self,id_permiso):
-        return self.repositorioPermisoRol.getListadoPermisoRol(id_permiso)

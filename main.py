@@ -36,7 +36,7 @@ def crearUsuario():
     return jsonify(json)
 
 
-@app.route("/usuarioss/<string:id>", methods=['GET'])
+@app.route("/usuarios/<string:id>", methods=['GET'])
 def getUsuario(id):
     json = miControladorUsuario.show(id)
     return jsonify(json)
@@ -146,10 +146,6 @@ def modificarPermisosRol(id_permisoRol,id_rol,id_permiso):
 @app.route("/permisoRol/<string:id_permisoRol>",methods=['DELETE'])
 def eliminarPermisosRol(id_permisoRol):
     json=miControladorPermisoRol.delete(id_permisoRol)
-    return jsonify(json)
-@app.route("/permisoRol/permiso/<string:id_permiso>",methods=['GET'])
-def permisos(id_permiso):
-    json=miControladorPermisoRol.listarPermisoRol(id_permiso)
     return jsonify(json)
 ########################################################################################################################
 def loadFileConfig():
